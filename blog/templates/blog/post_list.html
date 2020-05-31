@@ -25,12 +25,21 @@
         <h3>Hello visitors,</h3>
         <p>Welcome to this blog...</p>
         <br>
-        <h3 class="text-warning">This site is under construction...</h3>
+        <h4 class="text-warning">This site is under construction...</h4><br><br>
+        {% for post in posts %}
+            <div class="card mb-4">
+                <div class="cardbody p-3">
+                    <small class="float-left">published : {{post.published_date}}</small><br>
+                    <h3><a href="#">{{post.title}}</a></h3>
+                    <p class="text-justify">{{post.text}}</p>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
     
     <footer class="page-footer  bg-dark fixed-bottom text-white py-2">
-        <div class="footer-copyright text-center "><small>© 2020 Copyright: www.pollster.com |
+        <div class="footer-copyright text-center "><small>© 2020 Copyright: www.amansoni.pythonanywhere.com |
             <span class="font-italic">By - Aman Soni</span></small>
         </div>
     </footer>
