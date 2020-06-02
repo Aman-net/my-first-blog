@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block home %}active{% endblock %}
+{% block content %}
+    <div class="container text-center">
+        <h3>Hello friends,</h3>
+        <p>Welcome to this blog...</p>
+        <br>
+        <h4 class="text-warning">This website is under construction...</h4><br><br>
+        
+        {% for post in posts %}
+            <div class="card mb-5 shadow ">
+                <div class="cardbody p-3">
+                    <small class="float-left text-muted text-monospace">published : {{post.published_date}}</small><br>
+                    <h3 class="card-header text-info">{{post.title}}</h3><br>
+                    <p class="text-justify">{{post.text}}</p>
+                </div>
+            </div>
+        {% endfor %}
+        
+
+    </div>
+{% endblock %}
+
+    
+ 
