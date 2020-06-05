@@ -7,29 +7,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'blog.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
     <title>Blog-by Aman</title>
+   
 </head>
 <body>
     
     <nav class="navbar  mb-4" id="gradient">
         <div class="container" >
-            <a class="navbar-brand text-white font-weight-bold" href="#">Blog</a>
+            <a class="navbar-brand text-white font-weight-bold" href="{% url 'home' %}">Blog</a>
         </div>
     </nav>
     <div class="container">
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="home.html" class="nav-link {% block home %}{% endblock %}">Home</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link {% block about%}{% endblock %}">About</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link {% block contact %}{% endblock %}">Contact</a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link {% block home %}{% endblock %}">Home</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link {% block about%}{% endblock %}">About</a></li>
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link {% block contact %}{% endblock %}">Contact</a></li>
             {% if user.is_authenticated %}
-            <li class="nav-item ml-3"><a href="" class="nav-link"><span class="fa fa-plus fa-border bg-warning"></span></a></li>
+            <li class="nav-item ml-4"><a href="{% url 'post_new' %}" class="nav-link"><span class="fa fa-plus fa-border bg-warning"></span></a></li>
             {% endif %}
         </ul>
     </div>
     <hr>
 
-    <div class="container">
+    <div class="container fi">
         {%  block content %}{% endblock %}
     </div>
         
