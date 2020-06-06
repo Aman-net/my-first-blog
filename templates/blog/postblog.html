@@ -7,13 +7,15 @@
         <br><br>
         
         {% for post in posts %}
+        <a href="{% url 'post_detail' pk=post.pk %}">
             <div class="card mb-5 shadow">
                 <div class="cardbody p-3">
                     <small class="float-left text-muted text-monospace">published : {{post.published_date}}</small><br>
                     <h3 class="card-header text-info">{{post.title}}</h3><br>
-                    <p class="text-justify">{{post.text|linebreaksbr}}</p>
+                    <p class="text-justify">{{post.text|linebreaksbr|truncatewords:"15"}}</p>
                 </div>
             </div>
+        </a>    
         {% endfor %}
         
 
